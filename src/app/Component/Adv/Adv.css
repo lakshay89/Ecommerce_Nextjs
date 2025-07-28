@@ -1,0 +1,35 @@
+.adv-slider-wrapper {
+  padding: 20px 0;
+}
+
+/* Custom Carousel only for Adv */
+.adv-carousel {
+  width: 100%;
+}
+
+/* Container for a single image */
+.adv-slide-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* Next.js Image component will use this */
+.adv-slide-image {
+  object-fit: cover;
+}
+
+/* Media Queries for Responsive Height */
+@media (max-width: 768px) {
+  .adv-slide-container {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .adv-slide-container {
+    height: 150px;
+  }
+}

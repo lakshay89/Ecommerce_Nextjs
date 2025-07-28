@@ -1,0 +1,149 @@
+.bestsellers-section {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .bestsellers-heading {
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 28px;
+    position: relative;
+    color:white;
+  }
+  .bestsellers-subheading {
+    text-align: left;
+    /* font-weight: bold; */
+    margin-bottom: 40px;
+    font-size: 18px;
+    position: relative;
+    color:white;
+  }
+  
+  .bestsellers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+  
+  .product-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .product-image-wrapper {
+    position: relative;
+  }
+  
+  .product-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .discount-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #000;
+    color: #fff;
+    font-size: 13px;
+    padding: 4px 8px;
+    border-radius: 3px;
+  }
+  
+  .product-details {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .product-title {
+    font-size: 14px;
+    height: 60px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  
+  .product-price {
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .old-price {
+    color: #999;
+    text-decoration: line-through;
+    margin-right: 5px;
+  }
+  
+  .new-price {
+    color: #000;
+  }
+  
+  .product-rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 10px;
+  }
+  
+  .rating-text {
+    font-size: 12px;
+    color: #555;
+    margin-left: 5px;
+  }
+  
+  .add-to-cart-btn {
+    background-color: #2d2857;
+    color: #fff;
+    padding: 8px 14px;
+    width: 100%;
+    border: none;
+    font-size: 13px;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+  }
+  
+  .add-to-cart-btn:hover {
+    background-color: #333;
+  }
+  
+  .view-all-wrapper {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .view-all-btn {
+    background-color:#2d2857;
+    color: #fff;
+    padding: 10px 30px;
+    font-size: 14px;
+    border: none;
+    transition: 0.3s ease;
+  }
+  
+  .view-all-btn:hover {
+    background-color: #333;
+  }
+  .discount-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-color: #ff4444;
+  color: white;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 4px;
+  width:27%;
+}
+
+  
