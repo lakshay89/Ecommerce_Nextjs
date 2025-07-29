@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect } from 'react';
 import logo from '../../Images/Croma_Logo_acrkvn.svg';
+import './Navbar.css'
 // import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 export default function Navbar() {
@@ -33,7 +34,39 @@ export default function Navbar() {
             <i className="fas fa-bars"></i>
           </button>
 
-          <span className="d-none d-lg-inline-block ms-2 fw-semibold">Menu</span>
+          {/* <span className="d-none d-lg-inline-block ms-2 fw-semibold">Menu</span> */}
+          <div className="nav-item dropdown d-none d-lg-block ms-3">
+  <span
+    className="nav-link dropdown-toggle fw-semibold text-white"
+    id="menuDropdown"
+    role="button"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+    style={{ cursor: 'pointer' }}
+  >
+    Menu
+  </span>
+
+  <ul className="dropdown-menu" aria-labelledby="menuDropdown" style={{ transition: "opacity 0.2s ease" }}>
+    <li><Link className="dropdown-item" href="Pages/categories/smartphones">Mobiles</Link></li>
+    <li><Link className="dropdown-item"  href="Pages/categories/laptops">Laptops</Link></li>
+    <li><Link className="dropdown-item" href="/laptops">Televisions</Link></li>
+    <li><Link className="dropdown-item" href="/laptops">Litchen Appliances</Link></li>
+    <li><Link className="dropdown-item" href="/laptops">Audio</Link></li>
+
+    {/* Accessories with Submenu */}
+    <li className="dropdown-submenu position-relative">
+      <Link href="#" className="dropdown-item dropdown-toggle">Accessories</Link>
+      <ul className="dropdown-menu submenu position-absolute">
+        <li><Link className="dropdown-item" href="/accessories/headphones">Headphones</Link></li>
+        <li><Link className="dropdown-item" href="/accessories/chargers">Chargers</Link></li>
+        <li><Link className="dropdown-item" href="/accessories/cases">Cases</Link></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+
         </div>
 
         {/* Center: Search */}
