@@ -4,7 +4,7 @@
   background-color: #333 !important;
   color: white;
   border: none;
-  box-shadow: 2px 2px 0px aqua; /* right & bottom shadow */
+  box-shadow: 2px 2px 0px #14dbaa; /* right & bottom shadow */
   width:300px;
 }
 
@@ -16,7 +16,7 @@
 /* Hover styles */
 .dropdown-menu .dropdown-item:hover,
 .dropdown-menu .dropdown-item:focus {
-  background-color: aqua !important;
+  background-color: #14dbaa !important;
   color: black !important;
 }
 
@@ -33,7 +33,7 @@
   background-color: #333 !important;
   color: white;
   min-width: 180px;
-  box-shadow: 2px 2px 0px aqua;
+  box-shadow: 2px 2px 0px #14dbaa;
 }
 
 .dropdown-submenu:hover .submenu {

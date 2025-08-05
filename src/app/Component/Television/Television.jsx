@@ -6,10 +6,11 @@ import p2 from '../../Images/t2.jpeg'
 import p3 from '../../Images/t3.jpeg'
 import p4 from '../../Images/t4.jpeg'
 import p5 from '../../Images/t5.jpeg'
+import Link from 'next/link';
 
 
 const products = [
-  {id:1,
+  {id:6,
     image: p1,
     title: "Samsung 43-inch Crystal 4K UHD Smart LED TV",
     originalPrice: 34999,
@@ -18,7 +19,7 @@ const products = [
     reviews: 1620,
     showDiscount: true
   },
-  { id:2,
+  { id:7,
     image: p2,
     title: "OnePlus Y Series 43-inch Full HD LED Smart Android TV",
     originalPrice: 29999,
@@ -27,7 +28,7 @@ const products = [
     reviews: 1350,
     showDiscount: true
   },
-  { id:3,
+  { id:8,
     image: p3,
     title: "Sony Bravia 55-inch 4K Ultra HD Smart LED Google TV",
     originalPrice: 69999,
@@ -36,7 +37,7 @@ const products = [
     reviews: 980,
     showDiscount: true
   },
-  { id:4,
+  { id:9,
     image: p4,
     title: "LG 32-inch HD Ready Smart LED TV",
     originalPrice: 22999,
@@ -55,9 +56,13 @@ export default function Television() {
       <h2 className="bestsellers-heading">BEST IN TELEVISION </h2>
       <p className="bestsellers-subheading">Get Up To 12.5% Instant Bank Discount*</p>
       <div className="bestsellers-grid">
+        
         {products.map((product,index) => (
-            <ProductCard key={index} {...product} />
+           <Link key={index} href={`/Pages/television-details/${product.id}`}>
+            <ProductCard key={product.id} {...product} />
+            </Link>
         ))}
+        
       </div>
          <div className="view-all-wrapper">
         <button className="view-all-btn">VIEW ALL</button>

@@ -5,6 +5,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import Navbar from "./Component/Navbar/Navbar";
 import Footer from "./Component/Footer/Footer";
 import { Inter, Nunito, Work_Sans } from 'next/font/google';
+// import { StoreProvider } from '../context/StoreContext';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -36,9 +37,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.className}>
       <body style={{backgroundColor: "#1a1a1a"}}> 
+        {/* <StoreProvider> */}
         <Navbar />
         {children}
         <Footer />
+        {/* </StoreProvider> */}
       </body>
     </html>
   );

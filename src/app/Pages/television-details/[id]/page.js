@@ -11,6 +11,11 @@ import p1 from '../../../Images/m1.jpeg'
 import p2 from '../../../Images/m2.jpeg'
 import p3 from '../../../Images/m3.jpeg'
 import p4 from '../../../Images/m4.jpeg'
+
+import p5 from '../../../Images/t1.jpeg'
+import p6 from '../../../Images/t2.jpeg'
+import p7 from '../../../Images/t3.jpeg'
+import p8 from '../../../Images/t4.jpeg'
 import BestsellersSection from '@/app/Component/BestsellersSection/BestsellersSection';
 // import ProductCard from '@/app/Component/BestsellersSection/ProductCard';
 // import BestsellersSection from '../../../Component/BestsellersSection/BestsellersSection';
@@ -53,6 +58,43 @@ const products = [
     reviews: 720,
     showDiscount: true,
   },
+   {id:6,
+      image: [p5,p6,p7],
+      title: "Samsung 43-inch Crystal 4K UHD Smart LED TV",
+      originalPrice: 34999,
+      discountedPrice: 28999,
+      rating: 4.4,
+      reviews: 1620,
+      showDiscount: true
+    },
+    { id:7,
+      image: [p6,p7,p8],
+      title: "OnePlus Y Series 43-inch Full HD LED Smart Android TV",
+      originalPrice: 29999,
+      discountedPrice: 23999,
+      rating: 4.3,
+      reviews: 1350,
+      showDiscount: true
+    },
+    { id:8,
+      image: [p7,p5,p6],
+      title: "Sony Bravia 55-inch 4K Ultra HD Smart LED Google TV",
+      originalPrice: 69999,
+      discountedPrice: 62999,
+      rating: 4.7,
+      reviews: 980,
+      showDiscount: true
+    },
+    { id:9,
+      image: [p8,p7,p5],
+      title: "LG 32-inch HD Ready Smart LED TV",
+      originalPrice: 22999,
+      discountedPrice: 18999,
+      rating: 4.2,
+      reviews: 890,
+      showDiscount: true
+    },
+   
 ];
 export default function page() {
   const { id } = useParams();

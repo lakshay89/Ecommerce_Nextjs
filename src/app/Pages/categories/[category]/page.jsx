@@ -29,12 +29,12 @@ export default function CategoryPage() {
       <h2 className="bestsellers-heading text-2xl font-bold capitalize mb-1">
         {category} Products
       </h2>
-      <p className="bestsellers-subheading text-muted mb-4" style={{ color: 'white' }}>
+      <p className="bestsellers-subheading mb-4" style={{ color: 'white' }}>
         Find top deals on latest {category}!
       </p>
 
       <div className="bestsellers-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {products.map((product) => {
+        {products.map((product,_) => {
           const {
             id,
             title,
@@ -49,7 +49,7 @@ export default function CategoryPage() {
           const discountedPrice = (price * (1 - discountPercentage / 100)).toFixed(2);
 
           return (
-            <Link key={id} href={`/products/${id}`} passHref>
+           
               <div className="product-card">
                 <div className="product-image-wrapper relative">
                   <img      
@@ -81,12 +81,15 @@ export default function CategoryPage() {
                       {rating.toFixed(1)} ({reviews.length} Reviews)
                     </span>
                   </div>
+                   {/* <Link key={id} href={`/products/${id}`} passHref> */}
+                   {/* <Link key={id} href={`/singlecategoryproduct/${category}/${id}`}> */}
+                   <Link href={`/Pages/singlecategoryproduct/${category}/${id}`}>
                   <button className="add-to-cart-btn mt-2 px-2 py-1 bg-blue-600 text-white text-sm rounded hover:bg-blue-500">
                     ADD TO CART
                   </button>
+                  </Link>
                 </div>
               </div>
-            </Link>
           );
         })}
       </div>

@@ -2,16 +2,23 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import logo from '../../Images/Croma_Logo_acrkvn.svg';
 import './Navbar.css'
 // import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 export default function Navbar() {
-  useEffect(() => {
-    import('bootstrap/dist/js/bootstrap.bundle.min.js'); // ensure dropdown works
-  }, []);
+ useEffect(() => {
+  import('bootstrap/dist/js/bootstrap.bundle.min.js'); // Bootstrap JS
 
+  const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+  const storedWishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+  setCartItems(storedCart);
+  setWishlistItems(storedWishlist);
+}, []);
+const [cartItems, setCartItems] = useState([]);
+const [wishlistItems, setWishlistItems] = useState([]);
   return (
     <nav className="navbar navbar-expand-lg bg-black text-white px-3 py-3 shadow-sm">
       <div className="container">
@@ -48,9 +55,12 @@ export default function Navbar() {
   </span>
 
   <ul className="dropdown-menu" aria-labelledby="menuDropdown" style={{ transition: "opacity 0.2s ease" }}>
-    <li><Link className="dropdown-item" href="Pages/categories/smartphones">Mobiles</Link></li>
-    <li><Link className="dropdown-item"  href="Pages/categories/laptops">Laptops</Link></li>
-    <li><Link className="dropdown-item" href="/laptops">Televisions</Link></li>
+    <li><Link className="dropdown-item" href="/Pages/categories/smartphones">Mobiles</Link></li>
+    <li><Link className="dropdown-item"  href="/Pages/categories/laptops">Laptops</Link></li>
+    <li><Link className="dropdown-item"  href="/Pages/categories/tablets">tablets</Link></li>
+    <li><Link className="dropdown-item"  href="/Pages/categories/womens-watches">womens-watches</Link></li>
+    <li><Link className="dropdown-item"  href="/Pages/categories/mens-watches">mens-watches</Link></li>
+    <li><Link className="dropdown-item" href="/Pages/Television">Televisions</Link></li>
     <li><Link className="dropdown-item" href="/laptops">Litchen Appliances</Link></li>
     <li><Link className="dropdown-item" href="/laptops">Audio</Link></li>
 
@@ -96,13 +106,32 @@ export default function Navbar() {
                 <i className="fas fa-user"></i>
               </Link>
             </li>
-            <li className="nav-item position-relative">
-              <Link href="/cart" className="nav-link text-white position-relative">
+            <li className="nav-item position-relative d-flex">
+              {/* <Link href="/cart" className="nav-link text-white position-relative">
                 <i className="fas fa-shopping-cart"></i>
-                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info text-dark">
-                  0
+                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill text-dark" style={{backgroundColor:"#14dbaa"}}>
+                  {cartItems.length}
                 </span>
               </Link>
+              <Link href="/cart" className="nav-link text-white position-relative">
+                <i className="fas fa-heart"></i>
+                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill text-dark" style={{backgroundColor:"#14dbaa"}}>
+                  0
+                </span>
+              </Link> */}
+              <Link href="/Pages/cart" className="nav-link text-white position-relative">
+                    <i className="fas fa-shopping-cart"></i>
+                    <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill text-dark" style={{backgroundColor:"#14dbaa"}}>
+                      {cartItems.length}
+                    </span>
+                  </Link>
+                  <Link href="/Pages/wishlist" className="nav-link text-white position-relative">
+                    <i className="fas fa-heart"></i>
+                    <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill text-dark" style={{backgroundColor:"#14dbaa"}}>
+                      {wishlistItems.length}
+                    </span>
+              </Link>
+
             </li>
           </ul>
 
