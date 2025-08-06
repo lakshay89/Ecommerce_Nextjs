@@ -59,9 +59,9 @@ const BestsellersSection = () => {
       <div className="bestsellers-grid">
         {products.map((product, index) => (
           <div key={index}>
-           <Link key={index} href={`/Pages/television-details/${product.id}`}>
+           {/* <Link key={index} href={`/Pages/television-details/${product.id}`}> */}
           <ProductCard key={index} {...product} />
-           </Link>
+           {/* </Link> */}
            </div>
         ))}
       </div>

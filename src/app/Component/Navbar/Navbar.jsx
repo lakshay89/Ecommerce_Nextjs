@@ -5,20 +5,25 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import logo from '../../Images/Croma_Logo_acrkvn.svg';
 import './Navbar.css'
+
 // import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
+import { useCart } from '../../context/CartContext';
+
+
 export default function Navbar() {
- useEffect(() => {
-  import('bootstrap/dist/js/bootstrap.bundle.min.js'); // Bootstrap JS
+  const { cartItems } = useCart();
+//  useEffect(() => {
+//   import('bootstrap/dist/js/bootstrap.bundle.min.js'); // Bootstrap JS
 
-  const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
-  const storedWishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+//   const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+//   const storedWishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
 
-  setCartItems(storedCart);
-  setWishlistItems(storedWishlist);
-}, []);
-const [cartItems, setCartItems] = useState([]);
-const [wishlistItems, setWishlistItems] = useState([]);
+//   setCartItems(storedCart);
+//   setWishlistItems(storedWishlist);
+// }, []);
+// const [cartItems, setCartItems] = useState([]);
+// const [wishlistItems, setWishlistItems] = useState([]);
   return (
     <nav className="navbar navbar-expand-lg bg-black text-white px-3 py-3 shadow-sm">
       <div className="container">
@@ -122,13 +127,14 @@ const [wishlistItems, setWishlistItems] = useState([]);
               <Link href="/Pages/cart" className="nav-link text-white position-relative">
                     <i className="fas fa-shopping-cart"></i>
                     <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill text-dark" style={{backgroundColor:"#14dbaa"}}>
-                      {cartItems.length}
+                      {/* {cartItems.length} */}
+                      {cartItems.reduce((acc, item) => acc + item.quantity, 0)}
                     </span>
                   </Link>
                   <Link href="/Pages/wishlist" className="nav-link text-white position-relative">
                     <i className="fas fa-heart"></i>
                     <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill text-dark" style={{backgroundColor:"#14dbaa"}}>
-                      {wishlistItems.length}
+                      {/* {wishlistItems.length} */}
                     </span>
               </Link>
 

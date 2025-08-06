@@ -3,6 +3,21 @@
     max-width: 1200px;
     margin: auto;
   }
+  .add-to-cart-btn,
+.view-details-btn {
+  font-size: 0.85rem; /* smaller text */
+  padding: 6px 10px;  /* smaller height & width */
+  border-radius: 4px; /* keep buttons slightly rounded */
+  line-height: 1.2;
+  font-size: 12px !important;
+}
+
+.product-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
   
   .bestsellers-heading {
     text-align: left;
@@ -67,7 +82,7 @@
   
   .product-title {
     font-size: 14px;
-    height: 60px;
+    /* height: 60px; */
     overflow: hidden;
     margin-bottom: 10px;
   }
