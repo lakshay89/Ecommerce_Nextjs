@@ -67,7 +67,7 @@
   
   .product-title {
     font-size: 14px;
-    height: 60px;
+    /* height: 60px; */
     overflow: hidden;
     margin-bottom: 10px;
   }
