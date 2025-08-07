@@ -1,4 +1,5 @@
-import { Geist, Geist_Mono } from "next/font/google";
+// import { Geist, Geist_Mono } from "next/font/google";
+import BootstrapClient from '@/BootstrapClient'
 import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -6,6 +7,9 @@ import Navbar from "./Component/Navbar/Navbar";
 import Footer from "./Component/Footer/Footer";
 import { Inter, Nunito, Work_Sans } from 'next/font/google';
 import { CartProvider } from "./context/CartContext";
+
+// app/layout.js (App Router) or pages/_app.js (Pages Router)
+
 // import { WishlistProvider } from "@/context/WishlistContext";
 // import { StoreProvider } from '../context/StoreContext';
 
@@ -41,6 +45,7 @@ export default function RootLayout({ children }) {
       <body style={{backgroundColor: "#1a1a1a"}}> 
         {/* <StoreProvider> */}
          {/* <WishlistProvider> */}
+          <BootstrapClient />
          <CartProvider>
         <Navbar />
         {children}

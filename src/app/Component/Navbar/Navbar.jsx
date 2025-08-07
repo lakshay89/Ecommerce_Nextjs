@@ -106,24 +106,27 @@ export default function Navbar() {
               <i className="fas fa-map-marker-alt me-1"></i>
               <span>Mumbai, 400049</span>
             </li>
-            <li className="nav-item">
-              <Link href="/profile" className="nav-link text-white">
-                <i className="fas fa-user"></i>
-              </Link>
-            </li>
+          <li className="nav-item dropdown">
+  <span
+    className="nav-link dropdown-toggle fw-semibold text-white"
+    id="profileDropdown"
+    role="button"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+    style={{ cursor: 'pointer' }}
+  >
+    <i className="fas fa-user"></i>
+  </span>
+
+  <ul className="dropdown-menu w-75" aria-labelledby="profileDropdown">
+    <li><Link className="dropdown-item" href="/profile">My Profile</Link></li>
+    <li><Link className="dropdown-item" href="/orders">My Orders</Link></li>
+    <li><Link className="dropdown-item" href="/logout">Logout</Link></li>
+  </ul>
+</li>
+
             <li className="nav-item position-relative d-flex">
-              {/* <Link href="/cart" className="nav-link text-white position-relative">
-                <i className="fas fa-shopping-cart"></i>
-                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill text-dark" style={{backgroundColor:"#14dbaa"}}>
-                  {cartItems.length}
-                </span>
-              </Link>
-              <Link href="/cart" className="nav-link text-white position-relative">
-                <i className="fas fa-heart"></i>
-                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill text-dark" style={{backgroundColor:"#14dbaa"}}>
-                  0
-                </span>
-              </Link> */}
+           
               <Link href="/Pages/cart" className="nav-link text-white position-relative">
                     <i className="fas fa-shopping-cart"></i>
                     <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill text-dark" style={{backgroundColor:"#14dbaa"}}>
