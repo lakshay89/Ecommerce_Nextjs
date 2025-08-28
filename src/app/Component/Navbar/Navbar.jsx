@@ -121,7 +121,7 @@ export default function Navbar() {
   <ul className="dropdown-menu w-75" aria-labelledby="profileDropdown">
     <li><Link className="dropdown-item" href="/profile">My Profile</Link></li>
     <li><Link className="dropdown-item" href="/orders">My Orders</Link></li>
-    <li><Link className="dropdown-item" href="/logout">Logout</Link></li>
+    <li><Link className="dropdown-item" href="/Pages/login">Login/SignIn</Link></li>
   </ul>
 </li>
 
