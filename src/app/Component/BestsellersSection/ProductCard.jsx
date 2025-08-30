@@ -21,7 +21,8 @@ export default function ProductCard(props) {
   } = product;
 
   const [isAdded, setIsAdded] = useState(false);
-  const { addToCart, cartItems } = useCart();
+    const { addToCart, cartItems,addToWishlist, removeFromWishlist, wishlistItems } = useCart();
+  const isInWishlist = wishlistItems.some((item) => item.id === product.id);
 
   const priceToUse = discountedPrice || originalPrice || 0;
   const isAlreadyInCart = cartItems.some(item => item.id === id);
@@ -60,6 +61,15 @@ export default function ProductCard(props) {
       )}
 
       <div className="product-details">
+        {!isInWishlist ? (
+        <button className="btn btn-outline-danger" onClick={() => addToWishlist(product)}>
+          ❤️ 
+        </button>
+      ) : (
+        <button className="btn btn-danger" onClick={() => removeFromWishlist(product.id)}>
+          ❌ 
+        </button>
+      )}
         <p className="product-title">{title || 'Untitled'}</p>
 
         <p className="product-price">

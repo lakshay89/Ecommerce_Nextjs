@@ -2,9 +2,11 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 
 const CartContext = createContext();
+const WhishlistContext = createContext();
 
 export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
+  const [wishlistItems, setwishlistItems] = useState([]);
 
   // Load from localStorage on first render
   useEffect(() => {
@@ -59,9 +61,25 @@ export function CartProvider({ children }) {
     setCartItems((prev) => prev.filter((item) => item.id !== id));
   };
 
+  //Whishlist context and function starts from here
+  
+  //prvent duplicate items in whishlist
+  const addToWishlist = (product) => {
+    const exists = wishlistItems.find((item) => item.id === product.id);
+    if (!exists) {
+      setwishlistItems([...wishlistItems,product])
+    }
+  }
+  //Remove item from whishlist
+  const removeFromWishlist = (id) => {
+    setwishlistItems(wishlistItems.filter((item) => item.id !== id));
+  }
+
+
+
   return (
     <CartContext.Provider
-      value={{ cartItems, addToCart, increaseQty, decreaseQty, removeItem }}
+      value={{ cartItems,wishlistItems,  addToWishlist, removeFromWishlist, addToCart, increaseQty, decreaseQty, removeItem }}
     >
       {children}
     </CartContext.Provider>

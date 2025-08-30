@@ -12,7 +12,7 @@ import { useCart } from '../../context/CartContext';
 
 
 export default function Navbar() {
-  const { cartItems } = useCart();
+  const { cartItems,wishlistItems  } = useCart();
 //  useEffect(() => {
 //   import('bootstrap/dist/js/bootstrap.bundle.min.js'); // Bootstrap JS
 
@@ -138,6 +138,7 @@ export default function Navbar() {
                     <i className="fas fa-heart"></i>
                     <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill text-dark" style={{backgroundColor:"#14dbaa"}}>
                       {/* {wishlistItems.length} */}
+                      {wishlistItems.length}
                     </span>
               </Link>
 

@@ -11,18 +11,32 @@ export default function CategoryPage() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
+  // useEffect(() => {
+  //   setLoading(true);
+  //   fetch(`https://dummyjson.com/products/category/${category}`)
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setProducts(data.products || []);
+  //       setLoading(false);
+  //     })
+  //     .catch(() => setLoading(false));
+  // }, [category]);
+
+  // if (loading) return <p className="p-5 text-white">Loading...</p>;
+
+  useEffect(() =>{
     setLoading(true);
     fetch(`https://dummyjson.com/products/category/${category}`)
-      .then(res => res.json())
-      .then(data => {
-        setProducts(data.products || []);
-        setLoading(false);
-      })
+    .then(res => res.json())
+    .then(data => {
+      setProducts(data.products || []);
+        setLoading(False);
+     })
       .catch(() => setLoading(false));
-  }, [category]);
+    },[category]);
 
-  if (loading) return <p className="p-5 text-white">Loading...</p>;
+    if (loading) return <p className="p-5 text-white">Loading...</p>;
+  
 
   return (
     <section className="bestsellers-section container py-5">

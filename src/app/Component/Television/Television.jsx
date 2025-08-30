@@ -1,3 +1,4 @@
+import { useCart } from '@/app/context/CartContext';
 import React from 'react';
 import ProductCard from '../BestsellersSection/ProductCard';
 import './Television.css';
@@ -14,6 +15,7 @@ const products = [
 ];
 
 export default function Television() {
+
   return (
     <section className="bestsellers-section">
       <h2 className="bestsellers-heading">BEST IN TELEVISION </h2>
