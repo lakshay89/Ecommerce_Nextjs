@@ -5,20 +5,25 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import logo from '../../Images/Croma_Logo_acrkvn.svg';
 import './Navbar.css'
+
 // import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
+import { useCart } from '../../context/CartContext';
+
+
 export default function Navbar() {
- useEffect(() => {
-  import('bootstrap/dist/js/bootstrap.bundle.min.js'); // Bootstrap JS
+  const { cartItems,wishlistItems  } = useCart();
+//  useEffect(() => {
+//   import('bootstrap/dist/js/bootstrap.bundle.min.js'); // Bootstrap JS
 
-  const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
-  const storedWishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+//   const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+//   const storedWishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
 
-  setCartItems(storedCart);
-  setWishlistItems(storedWishlist);
-}, []);
-const [cartItems, setCartItems] = useState([]);
-const [wishlistItems, setWishlistItems] = useState([]);
+//   setCartItems(storedCart);
+//   setWishlistItems(storedWishlist);
+// }, []);
+// const [cartItems, setCartItems] = useState([]);
+// const [wishlistItems, setWishlistItems] = useState([]);
   return (
     <nav className="navbar navbar-expand-lg bg-black text-white px-3 py-3 shadow-sm">
       <div className="container">
@@ -101,33 +106,38 @@ const [wishlistItems, setWishlistItems] = useState([]);
               <i className="fas fa-map-marker-alt me-1"></i>
               <span>Mumbai, 400049</span>
             </li>
-            <li className="nav-item">
-              <Link href="/profile" className="nav-link text-white">
-                <i className="fas fa-user"></i>
-              </Link>
-            </li>
+          <li className="nav-item dropdown">
+  <span
+    className="nav-link dropdown-toggle fw-semibold text-white"
+    id="profileDropdown"
+    role="button"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+    style={{ cursor: 'pointer' }}
+  >
+    <i className="fas fa-user"></i>
+  </span>
+
+  <ul className="dropdown-menu w-75" aria-labelledby="profileDropdown">
+    <li><Link className="dropdown-item" href="/profile">My Profile</Link></li>
+    <li><Link className="dropdown-item" href="/orders">My Orders</Link></li>
+    <li><Link className="dropdown-item" href="/Pages/login">Login/SignIn</Link></li>
+  </ul>
+</li>
+
             <li className="nav-item position-relative d-flex">
-              {/* <Link href="/cart" className="nav-link text-white position-relative">
-                <i className="fas fa-shopping-cart"></i>
-                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill text-dark" style={{backgroundColor:"#14dbaa"}}>
-                  {cartItems.length}
-                </span>
-              </Link>
-              <Link href="/cart" className="nav-link text-white position-relative">
-                <i className="fas fa-heart"></i>
-                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill text-dark" style={{backgroundColor:"#14dbaa"}}>
-                  0
-                </span>
-              </Link> */}
+           
               <Link href="/Pages/cart" className="nav-link text-white position-relative">
                     <i className="fas fa-shopping-cart"></i>
                     <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill text-dark" style={{backgroundColor:"#14dbaa"}}>
-                      {cartItems.length}
+                      {/* {cartItems.length} */}
+                      {cartItems.reduce((acc, item) => acc + item.quantity, 0)}
                     </span>
                   </Link>
                   <Link href="/Pages/wishlist" className="nav-link text-white position-relative">
                     <i className="fas fa-heart"></i>
                     <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill text-dark" style={{backgroundColor:"#14dbaa"}}>
+                      {/* {wishlistItems.length} */}
                       {wishlistItems.length}
                     </span>
               </Link>

@@ -1,9 +1,11 @@
 'use client';
+import { useCart } from '@/app/context/CartContext.js';
 import React from 'react';
 import WishlistItem from '../../Component/WishlistItem/WishlistItem.jsx';
 
 export default function WishlistPage() {
   // Dummy wishlist data (you can fetch from API or context)
+  const { wishlistItems } = useCart();
   const wishlistData = [
     {
       id: 311502,
@@ -36,9 +38,16 @@ export default function WishlistPage() {
       </nav>
       <h3 className="text-white mb-4">My Wishlist</h3>
 
-      {wishlistData.map(item => (
+      {/* {wishlistData.map(item => (
         <WishlistItem key={item.id} product={item} />
-      ))}
+      ))} */}
+       {wishlistItems.length > 0 ? (
+        wishlistItems.map(item => (
+          <WishlistItem key={item.id} product={item} />
+        ))
+      ) : (
+        <p className="text-white">Your wishlist is empty ❤️</p>
+      )}
     </div>
   );
 }

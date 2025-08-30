@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { useCart } from '@/app/context/CartContext';
 
 export default function WishlistItem({ product }) {
   const {
@@ -13,6 +14,7 @@ export default function WishlistItem({ product }) {
     rating,
     reviewCount,
   } = product;
+  const { addToCart,removeFromWishlist } = useCart();
 
   return (
     <div className="card bg-dark text-white border border-secondary mb-4 p-3">
@@ -35,8 +37,15 @@ export default function WishlistItem({ product }) {
 
           {/* Pricing */}
           <div className="d-flex align-items-center gap-3 mb-2">
-            <h4 className="text-success mb-0">₹{price.toLocaleString()}</h4>
-            <del className="text-muted">₹{originalPrice.toLocaleString()}</del>
+            {/* <h4 className="text-success mb-0">₹{price.toLocaleString()}</h4>
+            <del className="text-muted">₹{originalPrice.toLocaleString()}</del> */}
+            <h4 className="text-success mb-0">
+  ₹{price ? Number(price).toLocaleString() : 0}
+</h4>
+<del className="text-muted">
+  ₹{originalPrice ? Number(originalPrice).toLocaleString() : 0}
+</del>
+
             <span className="badge bg-light text-dark">{discount} OFF</span>
           </div>
 
@@ -51,8 +60,8 @@ export default function WishlistItem({ product }) {
 
           {/* Action Buttons */}
           <div className="d-flex gap-2">
-            <button className="btn btn-success">Add to Cart</button>
-            <button className="btn btn-outline-light">Delete</button>
+            <button className="btn btn-success" onClick={() => addToCart(product)}> Add to Cart</button>
+            <button className="btn btn-outline-light" onClick={() => removeFromWishlist(id)}>Delete</button>
           </div>
         </div>
       </div>

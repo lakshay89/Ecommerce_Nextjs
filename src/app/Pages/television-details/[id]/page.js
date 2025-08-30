@@ -1,8 +1,8 @@
 'use client';
 import { useParams } from 'next/navigation';
+// import { useParams } from 'react-router-dom';
 import React, { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 // import styles from '';
 // import '../../../Component/BestsellersSection/BestsellersSection.css'
 import { FaStar, FaRegStar } from 'react-icons/fa';
@@ -96,8 +96,8 @@ const products = [
     },
    
 ];
-export default function page() {
-  const { id } = useParams();
+export default function Page() {
+  const { id } = useParams(); 
   const product = products.find((p) => p.id === parseInt(id));
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
@@ -310,7 +310,7 @@ export default function page() {
         <Accordion.Body>
          Seamless Performance
 
-         Powered by a MediaTek G88 octa - core processor and 4 GB RAM, the Lenovo M11 11 - Inch Tablet ensures smooth multitasking, efficient gaming, and seamless app switching.Whether you 're streaming, browsing, or working on projects, you can enjoy a responsive and lag-free experience.
+         Powered by a MediaTek G88 octa - core processor and 4 GB RAM, the Lenovo M11 11 - Inch Tablet ensures smooth multitasking, efficient gaming, and seamless app switching.Whether you are streaming, browsing, or working on projects, you can enjoy a responsive and lag-free experience.
 
 
          Adequate Storage
@@ -322,12 +322,12 @@ export default function page() {
          Immersive Display
 
          Designed with an 11 - inch ultra - crisp display, this tablet delivers sharp visuals and vibrant colours, making it ideal
-         for streaming, reading, or browsing.Whether you 're watching movies or studying, the edge-to-edge screen enhances your viewing experience.
+         for streaming, reading, or browsing.Whether you re watching movies or studying, the edge-to-edge screen enhances your viewing experience.
 
 
          Powerful Sound
 
-         Equipped with quad speakers tuned by Dolby Atmos, this tablet offers rich, 3 D surround sound.So, whether you 're listening to music, watching content, or playing games, you can experience immersive, high-quality audio.
+         Equipped with quad speakers tuned by Dolby Atmos, this tablet offers rich, 3 D surround sound.So, whether you are listening to music, watching content, or playing games, you can experience immersive, high-quality audio.
 
 
          Enhanced Learning and Creativity
@@ -338,18 +338,18 @@ export default function page() {
          Effortless Multitasking
 
          With split - screen and multi - window support, you can work on assignments
-         while watching tutorials or taking notes.So, whether you 're researching or attending online classes, multitasking feels seamless.
+         while watching tutorials or taking notes.So, whether you re researching or attending online classes, multitasking feels seamless.
 
 
          Immersive Reading Mode
 
-         Equipped with Lenovo’ s Immersive Reading Mode, Lenovo tablet replicates a book’ s colour matrix with chromatic and mono modes.Additionally, ambient music enhances focus, making long reading sessions more comfortable.
+         Equipped with Lenovo s Immersive Reading Mode, Lenovo tablet replicates a book s colour matrix with chromatic and mono modes.Additionally, ambient music enhances focus, making long reading sessions more comfortable.
 
 
          Google Lens Integration
 
          With Google Lens support, this tablet allows you to scan documents, translate text, and search
-         for information instantly.Whether you 're learning a new language or identifying objects, getting answers is quick and effortless.
+         for information instantly.Whether you are learning a new language or identifying objects, getting answers is quick and effortless.
 
 
          Long - Lasting Battery

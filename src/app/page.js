@@ -8,6 +8,7 @@ import Adv from "./Component/Adv/Adv";
 import Galleryadv from "./Component/Galleryadv/Galleryadv";
 import BestsellersSection from "./Component/BestsellersSection/BestsellersSection";
 import Television from "./Component/Television/Television";
+import AdSlider from "./Component/AdSlider/AdSlider";
 
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
     <Television />
     <Galleryadv />
     <BestsellersSection/>
+    <AdSlider />
     </>
     
   );
