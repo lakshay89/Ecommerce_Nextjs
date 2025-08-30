@@ -308,51 +308,7 @@ const handleNext = () => {
       <Accordion.Item eventKey="0">
         <Accordion.Header>Overview</Accordion.Header>
         <Accordion.Body>
-         Seamless Performance
-
-         Powered by a MediaTek G88 octa - core processor and 4 GB RAM, the Lenovo M11 11 - Inch Tablet ensures smooth multitasking, efficient gaming, and seamless app switching.Whether you 're streaming, browsing, or working on projects, you can enjoy a responsive and lag-free experience.
-
-
-         Adequate Storage
-
-         With 64 GB of internal storage, this LTE tablet provides plenty of room
-         for apps, documents, and media.Plus, expandable storage ensures you can keep all your important files without worrying about running out of space.
-
-
-         Immersive Display
-
-         Designed with an 11 - inch ultra - crisp display, this tablet delivers sharp visuals and vibrant colours, making it ideal
-         for streaming, reading, or browsing.Whether you were watching movies or studying, the edge-to-edge screen enhances your viewing experience.
-
-
-         Powerful Sound
-
-         Equipped with quad speakers tuned by Dolby Atmos, this tablet offers rich, 3 D surround sound.So, whether you 're listening to music, watching content, or playing games, you can experience immersive, high-quality audio.
-
-
-         Enhanced Learning and Creativity
-
-         Supporting the optional Lenovo Tab Pen, this 11 - inch tablet enables note - taking, doodling, and sketching with precision.Plus, with 4, 096 pressure sensitivity levels and tilt support, it provides an interactive and intuitive creative experience.
-
-
-         Effortless Multitasking
-
-         With split - screen and multi - window support, you can work on assignments
-         while watching tutorials or taking notes.So, whether you 're researching or attending online classes, multitasking feels seamless.
-
-
-         Immersive Reading Mode
-
-         Equipped with Lenovo’ s Immersive Reading Mode, Lenovo tablet replicates a book’ s colour matrix with chromatic and mono modes.Additionally, ambient music enhances focus, making long reading sessions more comfortable.
-
-
-         Google Lens Integration
-
-         With Google Lens support, this tablet allows you to scan documents, translate text, and search
-         for information instantly.Whether you 're learning a new language or identifying objects, getting answers is quick and effortless.
-
-
-         Long - Lasting Battery
+        
 
          Powered by a durable battery, this tablet provides up to 10 hours of video playback.So, you can enjoy uninterrupted entertainment, learning, or productivity without frequent charging.
 

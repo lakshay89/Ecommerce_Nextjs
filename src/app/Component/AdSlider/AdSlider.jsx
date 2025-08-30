@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 // import video1 from ''; // Make sure this path is correct
 
 const App = () => {
@@ -130,7 +131,7 @@ const App = () => {
                         Your browser does not support the video tag.
                       </video>
                     ) : (
-                      <img
+                      <Image
                         src={slides[currentIndex].image}
                         alt={slides[currentIndex].title}
                         className="img-fluid rounded-3"

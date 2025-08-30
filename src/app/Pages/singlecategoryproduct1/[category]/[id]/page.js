@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
@@ -33,7 +34,7 @@ export default function SingleProductPage() {
       </h2>
 
       <div className="grid md:grid-cols-2 gap-8">
-        <img
+        <Image
           src={product.images?.[0] || '/placeholder.png'}
           alt={product.title}
           className="w-full h-[400px] object-cover rounded"
