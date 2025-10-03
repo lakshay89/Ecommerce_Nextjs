@@ -1,0 +1,17 @@
+.custom-breadcrumb {
+  color: #14dba9 !important;
+}
+
+.custom-breadcrumb .breadcrumb-item,
+.custom-breadcrumb .breadcrumb-item a {
+  color: #14dba9 !important;
+  text-decoration: none !important; /* removes underline */
+}
+
+.custom-breadcrumb .breadcrumb-item.active {
+  color: #14dba9 !important; /* active item stays white */
+}
+
+.custom-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+  color: #14dba9 !important; /* separator "/" color */
+}
