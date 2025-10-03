@@ -7,23 +7,14 @@ import logo from '../../Images/Croma_Logo_acrkvn.svg';
 import './Navbar.css'
 
 // import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-
 import { useCart } from '../../context/CartContext';
 
 
 export default function Navbar() {
-  const { cartItems,wishlistItems  } = useCart();
-//  useEffect(() => {
-//   import('bootstrap/dist/js/bootstrap.bundle.min.js'); // Bootstrap JS
+  // defensive: if provider not ready, avoid crash
+  const ctx = useCart() || {};
+  const { cartItems = [], wishlistItems = [] } = ctx;
 
-//   const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
-//   const storedWishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-
-//   setCartItems(storedCart);
-//   setWishlistItems(storedWishlist);
-// }, []);
-// const [cartItems, setCartItems] = useState([]);
-// const [wishlistItems, setWishlistItems] = useState([]);
   return (
     <nav className="navbar navbar-expand-lg bg-black text-white px-3 py-3 shadow-sm">
       <div className="container">
